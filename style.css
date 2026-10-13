@@ -1,0 +1,76 @@
+/* Colours mirror spec/design-tokens.json (background, surface, text, primary, accent). */
+:root {
+  color-scheme: light dark;
+  --bg: #F7F3EC;
+  --surface: #FFFFFF;
+  --text: #1B1F2A;
+  --muted: #5B6170;
+  --primary: #1E3A5F;
+  --accent: #9A5B12;
+  --line: rgba(27, 31, 42, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0B1220;
+    --surface: #141C2E;
+    --text: #F3EFE7;
+    --muted: #A9B0BF;
+    --primary: #9DBDF0;
+    --accent: #F2B544;
+    --line: rgba(243, 239, 231, 0.14);
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+header {
+  background: linear-gradient(160deg, #0B1220, #22305A);
+  color: #F3EFE7;
+  padding: 40px 16px 32px;
+}
+
+header .wrap { display: flex; flex-direction: column; gap: 4px; }
+header a { color: inherit; text-decoration: none; }
+.brand { font-family: Georgia, "Times New Roman", serif; font-size: 30px; letter-spacing: 0.5px; }
+.tagline { color: rgba(243, 239, 231, 0.78); font-size: 15px; }
+
+nav { display: flex; gap: 20px; margin-top: 16px; font-size: 15px; }
+nav a { color: #F2B544; }
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+main { padding: 32px 0 48px; }
+
+h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; }
+h2 { font-size: 21px; margin: 36px 0 8px; }
+h3 { font-size: 17px; margin: 24px 0 4px; }
+p, li { color: var(--text); }
+.meta { color: var(--muted); font-size: 15px; margin-top: 0; }
+a { color: var(--primary); }
+strong { font-weight: 600; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+.card p:first-child { margin-top: 0; }
+.card p:last-child, .card ul:last-child { margin-bottom: 0; }
+
+.path { color: var(--accent); font-weight: 600; }
+
+footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+  padding: 20px 0 40px;
+}
